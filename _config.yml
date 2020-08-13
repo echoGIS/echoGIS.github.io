@@ -1,12 +1,12 @@
 # Basic
-title: Solarzhou's Blog
-subtitle: 胡萬三
-description: 续建码头，精彩继续...
+title: zhengMeimei's Blog
+subtitle: Miss zheng
+description: 心中一年尚存，自处并不寂寞。小园掠过微风，有花自开自落...
 # 头像里面的标题
-avatarTitle: Solarzhou
+avatarTitle: ZhengMeimei
 # 头像里面的描述
 avatarDesc: 2018 · 期待
-url: "http://tzhou2018.github.io"
+url: "http://echoGIS.github.io"
 
 # Comment
 comment:
@@ -70,9 +70,9 @@ blog_button:
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: 所有文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}
-    - {title: 项目, description: project, url: '/project'}      
+#    - {title: 所有文章, description: archive, url: '/archive'}   
+#    - {title: 标签, description: tags, url: '/tags'}
+#    - {title: 项目, description: project, url: '/project'}      
     - {title: 关于我, description: about, url: '/about'}
           
     
