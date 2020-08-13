@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>为GitHub Pages自定义域名并添加SSL-开启https强制</title>
+  <meta name="description" content="直奔主题">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="为GitHub Pages自定义域名并添加SSL-开启https强制">
+  <meta name="twitter:description" content="直奔主题">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="为GitHub Pages自定义域名并添加SSL-开启https强制">
+  <meta property="og:description" content="直奔主题">
+  
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2018/04/%E4%B8%BAGitHub-Pages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%B9%B6%E6%B7%BB%E5%8A%A0SSL-%E5%BC%80%E5%90%AFHTTPS%E5%BC%BA%E5%88%B6/">
+  <link rel="alternate" type="application/rss+xml" title="Solarzhou's Blog" href="http://localhost:4000/feed.xml">
+  
+
+<!-- 不蒜子-站点统计 -->
+  <script 
+  async src="http//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- Baidu tongji analytics 百度统计-->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics google 统计-->
+
+
+<!-- google Adsense -->
+
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/project" title="project" class="btn-mobile-menu__icon">
+                      项目
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header id="BackgroundArea" class="panel-cover panel-cover--collapsed" >
+  
+  <script type="text/javascript" src="../js/changebg.js"> </script><!--imp！实现随机替换背景图片-->
+
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/about" title="Solarzhou's Blog" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                Solarzhou
+                            
+                        </h2>
+                        <p>
+                           
+                                2018 · 期待
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Solarzhou's Blog" class="blog-button">Solarzhou's Blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">胡萬三</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">续建码头，精彩继续...</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/project" title="project">项目</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">为GitHub Pages自定义域名并添加SSL-开启https强制</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2018-04-23 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-04-23</time> | 阅读：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>次
+    </p>
+    </div>
+  </header>
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <section class="post">
+    <h2 id="直奔主题">直奔主题</h2>
+
+<h3 id="为什么要使用https协议">为什么要使用https协议？</h3>
+
+<ol>
+  <li>
+    <p>提高网站访问安全性，网络连接都是加密的 (PS：虽然<code class="language-plaintext highlighter-rouge">SSL</code>并不是无懈可击的，但是我们应该尽可能提高窃听成本)。</p>
+  </li>
+  <li>
+    <p>目前越来越多的浏览器会判断当前站点支不支持https协议，提高用户信任度，体验好.</p>
+
+    <blockquote>
+      <p>例如：据外媒报道，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的HTTP页面标记为<code class="language-plaintext highlighter-rouge">“不安全”</code>，比如含有密码或支付表单信息。Google最终目标是将所有打破了https连接的HTTP页面，用特定的<code class="language-plaintext highlighter-rouge">红色图标</code>给标记出来… 此举旨在唤起用户有关HTTP连接不安全、容易受到中间人攻击等危险的意识。通过HTTP连接发送的数据（比如密码和支付细节），会被通网络下别有用心的人轻易拦截。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Mozilla也在做着同样的事情——其中就有通过提供免费的TSL证书，以便其为网站服务部署https连接的<code class="language-plaintext highlighter-rouge">Let's Encrypt项目</code>。根据Chrome的遥测数据，在该浏览器每天加载的网页中，有近一半是通过https连接的。</p>
+  </li>
+  <li>
+    <p>福利：使用了https之后，如果网站的访客是从其他已经使用了https的网站上跳转过来，你就能在<code class="language-plaintext highlighter-rouge">Google Analytics</code>中获取更完整的来源信息。(说到这，不得不吐槽一下”墙”，它导致 <code class="language-plaintext highlighter-rouge">Google Analytics</code>的信息延迟长达一天以上，最后我不得不再将 <code class="language-plaintext highlighter-rouge">Baidu Analytics</code> 纳入我的选择。)</p>
+  </li>
+  <li>
+    <p>使用https之后，谷歌、百度等搜索排名权值（PR等）也会有相对提升。</p>
+  </li>
+  <li>
+    <p>And 个人原因，作为一个有个性并略有强迫症的耿直Boy，终于在前一阵子给自己的博客弄了个人域名<code class="language-plaintext highlighter-rouge">zhouie.cn</code>(阿里云)，怎么可以没有一把小小的<code class="language-plaintext highlighter-rouge">绿锁头</code>？！</p>
+  </li>
+</ol>
+
+<p>默认情况下使用GitHub Pages的给定域名则支持http和https两种协议，但是如果使用自定义域名的话，则只能通过<code class="language-plaintext highlighter-rouge">http://</code>访问，也就是说我们在<code class="language-plaintext highlighter-rouge">Github上搭建 Hexo 或Jekyll 主题博客</code>后，通过<code class="language-plaintext highlighter-rouge">CNAME</code>绑定个人域名后，我们只能通过<code class="language-plaintext highlighter-rouge">http://</code>域名来访问。如果访问<code class="language-plaintext highlighter-rouge">https://XXX.github.io/</code>(即原来的GitHub Pages域名)将会被重定向到<code class="language-plaintext highlighter-rouge">我们的自定义域名</code>。但若直接访问<code class="language-plaintext highlighter-rouge">https://我们的自定义域名</code>，浏览器会报<code class="language-plaintext highlighter-rouge">SSL_DOMAIN_NOT_MATCHED</code>警告。</p>
+
+<blockquote>
+  <p>附：<code class="language-plaintext highlighter-rouge">在Github上搭建 Hexo 或Jekyll 主题博客</code>，这个网上教程很多，提供一篇我之前有写过的一篇教程<a href="https://javef.github.io/2018/02/Jekyll-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E6%8B%93%E5%B1%95%E7%89%88/">Jekyll 搭建个人博客</a>。</p>
+</blockquote>
+
+<p>那么怎么给自己的域名加上<code class="language-plaintext highlighter-rouge">https</code>呢？这个时候就需要使用第三方网站的证书了。而GitHub Pages并不支持上传SSL证书。</p>
+
+<p>我在Google、Bbaidu上找相关解决办法时，又看到这样一个帖子：<a href="https://www.v2ex.com/t/379653">GitHub Pages 自定义域名启用 SSL，各位有什么建议？</a>。</p>
+
+<p>从网上提供的信息来看，目前方案主要有两种：</p>
+
+<ul>
+  <li>
+    <p>自己购买证书，部署到一台机器，机器部署<code class="language-plaintext highlighter-rouge">nginx</code>，<code class="language-plaintext highlighter-rouge">stunnel</code>等代理软件，反向代理到GitHub pages站点，域名指向代理机器IP(收费的SSL服务肯定是比免费的更加周到，一般收费的SSL都会提供端到端的加密，但是价格不菲，不推荐，不过这里还是分享一篇相关教程<a href="https://zhuanlan.zhihu.com/p/29644657">一步步教你把HTTP网站免费转成HTTPS网站</a>)；</p>
+  </li>
+  <li>
+    <p>使用CloudFlare提供方案1类似的设置(推荐)</p>
+  </li>
+</ul>
+
+<hr />
+<h2 id="借用cloudflare-给自己的域名加个-s">借用CloudFlare 给自己的域名加个 s</h2>
+
+<p><a href="https://www.cloudflare.com/">CloudFlare</a> 是一家CDN提供商，它提供了<code class="language-plaintext highlighter-rouge">免费的https服务</code>(但不是应用SSL证书)。实现模式就是，用户到CDN服务器的连接为<code class="language-plaintext highlighter-rouge">https</code>，而CDN服务器到GithubPage服务器的连接为<code class="language-plaintext highlighter-rouge">http</code>，就是在CDN服务器那里加上反向代理。</p>
+
+<blockquote>
+  <p>在网上还找到这样一种解释
+Cloudflare 提供一种被他们称之为<code class="language-plaintext highlighter-rouge">Universal SSL</code>的服务，可以让任意 <code class="language-plaintext highlighter-rouge">HTTP </code>站点支持 <code class="language-plaintext highlighter-rouge">HTTPS</code>。它的原理是当访客使用 <code class="language-plaintext highlighter-rouge">HTTPS</code>访问站点的时候，从访客到 Cloudflare 这段是加密的，然后从 Cloudflare 到站点这段是明文的。虽然不是全程加密，但是也能很大程度上解决中间人，如果从 Cloudflare 到站点的信道相对可靠的话</p>
+</blockquote>
+
+<ol>
+  <li>注册并登录CloudFlare，并将自己域名下的<code class="language-plaintext highlighter-rouge">name server</code>修改为CloudFlare的<code class="language-plaintext highlighter-rouge">name server</code>。</li>
+  <li>在CloudFlare的DNS设置域名匹配到自己的GithubPage(启用动态DNS加速)。</li>
+  <li>在CloudFlare的<code class="language-plaintext highlighter-rouge">Crypto</code>设置SSL为<code class="language-plaintext highlighter-rouge">Flexible</code>(等待一定时间实现建立连接后，就可以通过<code class="language-plaintext highlighter-rouge">https</code>来访问自己的 GithubPage )。</li>
+  <li>在CloudFlare的<code class="language-plaintext highlighter-rouge">Page Rules</code>中设置路由规则。一般情况下，利用<code class="language-plaintext highlighter-rouge">Always use https</code>设置两条规则，规则链接分别为<code class="language-plaintext highlighter-rouge">http://域名/*</code> 与<code class="language-plaintext highlighter-rouge">http://域名/</code>(开启https强制跳转)。</li>
+</ol>
+
+<p>还有其他的一些，例如Cloudflare还提供免费的<code class="language-plaintext highlighter-rouge">CDN</code>和<code class="language-plaintext highlighter-rouge">缓存技术</code>，让浏览者有更好的体验~~</p>
+
+<h3 id="详细步骤">详细步骤</h3>
+
+<ul>
+  <li>创建CloudFlare帐户，并添加网站</li>
+</ul>
+
+<p>首先你已经有自己的<code class="language-plaintext highlighter-rouge">自定义域名</code>的GitHub Pages ，我的 GitHub Pages CNAME文件写的是 <code class="language-plaintext highlighter-rouge">zhouie.cn</code></p>
+
+<blockquote>
+  <p>明确一下我们的实现目标： 当访客输入<code class="language-plaintext highlighter-rouge">zhouie.cn</code> 强制跳转使用https，访问<code class="language-plaintext highlighter-rouge">wwww.zhouie.cn</code> 也会跳转到<code class="language-plaintext highlighter-rouge">https://www.zhouie.cn</code></p>
+</blockquote>
+
+<p>如果你还没有Cloudflare账号，<a href="https://www.cloudflare.com/a/sign-up">点击注册</a></p>
+
+<ul>
+  <li>登陆后，<a href="https://www.cloudflare.com/a/add-site">点击这里</a> 增加你的域名，如下图，输入你的域名，例如 <code class="language-plaintext highlighter-rouge">zhouie.cn</code> 并点击<code class="language-plaintext highlighter-rouge">Begin Scan</code></li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/1p3D360D0G3y1z1C363y/Image%202018-04-23%20at%206.45.37%20PM.png" alt="" /></p>
+
+<blockquote>
+  <p>注意不要写<code class="language-plaintext highlighter-rouge">WWW</code>前缀，大约60秒即可完成域名解析扫描。完成后点击<code class="language-plaintext highlighter-rouge">Continue Setup</code> 继续下一步</p>
+</blockquote>
+
+<ul>
+  <li>你看到<code class="language-plaintext highlighter-rouge">DNS记录（包括子域）列表</code>之后，按照下图提示设置后，其中<code class="language-plaintext highlighter-rouge">cname</code>是为了重定向<code class="language-plaintext highlighter-rouge">www</code>备的，点击<code class="language-plaintext highlighter-rouge">Continue</code>下一步</li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/3l0J1B3N3z2U142b1I0v/Image%202018-04-23%20at%206.54.04%20PM.png" alt="" /></p>
+
+<ul>
+  <li>选择免费计划，然后下一步~</li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/3k0s2u3h1E3Y2W0M2J0o/Image%202018-04-23%20at%206.55.56%20PM.png" alt="" /></p>
+
+<blockquote>
+  <p>到你域名控制面板修改<code class="language-plaintext highlighter-rouge">cloudflare</code>给出的域名服务器，我这里以<code class="language-plaintext highlighter-rouge">阿里云</code>为例</p>
+</blockquote>
+
+<ul>
+  <li>在<code class="language-plaintext highlighter-rouge">域名管理台</code>点击<code class="language-plaintext highlighter-rouge">管理</code></li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/2d1w3U2z2U3R2q0Q2N1R/Image%202018-04-23%20at%207.02.00%20PM.png" alt="" /></p>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/2u3o1Q3z383R0O0Z2F14/Image%202018-04-23%20at%207.11.28%20PM.png" alt="" /></p>
+
+<blockquote>
+  <p>注：虽然官方说明，域名服务器修改最长需要72小时生效，但我用域名做了自己测试，大约只需要 5~10 分钟，看到 <strong>Status: Active</strong> 即可</p>
+</blockquote>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/1t3O2b3t2Y2K2g1M303h/Image%202018-04-23%20at%207.17.33%20PM.png" alt="" /></p>
+
+<ul>
+  <li>设置SSL
+点击 <code class="language-plaintext highlighter-rouge">crypto </code>菜单 , 然后设置<code class="language-plaintext highlighter-rouge">Flexible SSL</code> ，如下图</li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/3E1j3m3a1X3i362v431x/Image%202018-04-23%20at%207.19.14%20PM.png" alt="" /></p>
+
+<ul>
+  <li>添加www重定向到https://yicodes.com</li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/0o1p3o0t0G2Y0N2h2B3x/Image%202018-04-23%20at%207.23.29%20PM.png" alt="" /></p>
+
+<ul>
+  <li>添加自动重定向到 SSL页面</li>
+</ul>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/2d2V021G3V2J3i2a201I/Image%202018-04-23%20at%207.26.11%20PM.png" alt="" /></p>
+
+<ul>
+  <li>添加SSL的教程就此完成，一般需要5~30分钟生效！！！ 
+<img src="https://dha4w82d62smt.cloudfront.net/items/3C1w0i0V2A0U241k0n0u/Screen%20Recording%202018-04-23%20at%2007.37.38.99%20PM.gif" alt="" /></li>
+</ul>
+
+<h3 id="小绿锁出现了哈哈">小绿锁出现了，哈哈</h3>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/1v1B1F0h3f371Y3W1G3Q/Image%202018-04-23%20at%208.23.01%20PM.png" alt="" /></p>
+
+<hr />
+<h2 id="补充转载">补充<a href="https://steffan.cn/">[转载]</a></h2>
+<h3 id="为什么github-pages不支持为自定义域名添加ssl证书呢">为什么Github Pages不支持为自定义域名添加SSL证书呢？</h3>
+<p>当我们访问自定义域名，DNS指向的地址(<code class="language-plaintext highlighter-rouge">Github Pages</code>的<code class="language-plaintext highlighter-rouge">IP</code>)会在我们的仓库中寻找<code class="language-plaintext highlighter-rouge">cname</code>文件，判断目标文件和请求来源地址的域名一致后，<code class="language-plaintext highlighter-rouge">Github Pages</code>会将<code class="language-plaintext highlighter-rouge">errorlife.github.io</code>的内容返回给用户。
+<img src="https://dha4w82d62smt.cloudfront.net/items/2F1j3N1e1Y0T2n0w3I19/Image%202018-04-23%20at%207.52.59%20PM.png" alt="" /></p>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/3F3j0e1H1H0l1R2C1Q3j/Image%202018-04-23%20at%207.56.43%20PM.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>Ok，这是一个比较完整的过程，但是在解析的途中，看上面两张图(tracert一下这个”裸奔”站好了 :P)，你会发现请求的地址是“美国Fastly公司CDN网络节点”，很明显这是Github的CDN，而且它只支持80端口，不支持443端口，免费的CDN一般不支持,而https默认就是使用443端口。</p>
+  </li>
+  <li>
+    <p>所以我们就知道Github Pages在解析域名和原生地址所分配的是不同的CDN，前者是不支持https的，而后者恰恰相反。</p>
+  </li>
+</ul>
+
+<h3 id="思考我们牺牲了什么">思考我们牺牲了什么</h3>
+<blockquote>
+  <p>天下没有免费的午餐，不劳而获始终都是泡沫。所以在这个过程中我们究竟牺牲了什么？</p>
+</blockquote>
+
+<ol>
+  <li>我们必须<code class="language-plaintext highlighter-rouge">修改域名的DNS服务器</code>为Cloudflare提供的地址才能使用这项服务；</li>
+  <li>无法进行<code class="language-plaintext highlighter-rouge">coding+github双线部署</code>，除非你使用Cloudflare的<code class="language-plaintext highlighter-rouge">收费服务</code>，或者<code class="language-plaintext highlighter-rouge">反向代理</code>，更多思路详见<code class="language-plaintext highlighter-rouge">v2ex</code>提问的一个<a href="https://www.v2ex.com/t/344686">帖子</a>。</li>
+</ol>
+
+<h3 id="检查是否引用外部资源">检查是否引用外部资源</h3>
+<p>这个问题在我这儿并没有出现过，可是从网上教程来看，因为以往(一两年前)引用的某些外部资源还是<code class="language-plaintext highlighter-rouge">http</code>的，会出现一些问题，比如：</p>
+
+<blockquote>
+  <p>生效后我发现我的网站是不太安全的状态，而且当我点击加载脚本之后，从不太安全的状态变成了不安全的状态。</p>
+</blockquote>
+
+<p>v友的解决办法：</p>
+<blockquote>
+  <p>按下<code class="language-plaintext highlighter-rouge">F12</code>，尴尬的事情发生了，原来是配置文件和<code class="language-plaintext highlighter-rouge">palceholder</code>在作怪，由于<code class="language-plaintext highlighter-rouge">多说</code>的头像用的还是<code class="language-plaintext highlighter-rouge">http</code>，巧的是，没多久，多说就下线关门了。</p>
+</blockquote>
+
+<p><img src="https://dha4w82d62smt.cloudfront.net/items/133s2D1e2O2z163v0y0g/Image%202018-04-23%20at%208.17.06%20PM.png" alt="" /></p>
+
+<blockquote>
+  <p>这就要求我们对https协议理解通透，之后google了一下，发现https并不支持这种第三方引入资源。</p>
+</blockquote>
+
+<hr />
+<h2 id="参考资料">参考资料</h2>
+<ul>
+  <li><a href="https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/">cloudflare官方使用指南</a></li>
+  <li><a href="https://blog.keanulee.com/2014/10/11/setting-up-ssl-on-github-pages.html">keanulee Blog</a></li>
+  <li><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/">sheharyar Blog</a></li>
+  <li><a href="https://blog.jamespan.me/2015/04/17/github-and-gitcafe-pages">Pages 博客 HTTPS 化尝试与 Universal SSL</a></li>
+  <li><a href="https://www.yicodes.com/2016/12/04/free-cloudflare-ssl-for-custom-domain/">为自定义域名的GitHub Pages添加SSL 完整方案</a></li>
+  <li><a href="https://www.mdslq.cn/archives/40865889.html">Hexo支持https访问</a></li>
+  <li><a href="https://www.zhihu.com/question/33495825">github pages绑定了个人域名，怎么使用https访问而证书不报错呢？-知乎</a></li>
+  <li><a href="http://mazhuang.org/2016/05/21/enable-https-for-github-pages/">为绑定域名的 GitHub Pages 启用 HTTPS</a>»»»没有测试过，不过似乎已经不能用了。</li>
+</ul>
+
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+                <div class="shang_info-play">
+                  <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2018/04/%E8%B5%B0%E8%BF%9BMarkdown%E5%9B%AD%E5%AD%90/" data-toggle="tooltip" data-placement="top" title="走进Markdown园子">上一篇：  <span>走进Markdown园子</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2018/04/%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8A%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB%E6%BC%94%E7%A4%BA%E6%96%87%E7%A8%BF/" data-toggle="tooltip" data-placement="top" title="图床以及在线分享演示文稿">下一篇：  <span>图床以及在线分享演示文稿</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzE0My85NzAx">
+      <script type="text/javascript">
+          (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+            if (typeof LivereTower === 'function') { return; }
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+            e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+    <!-- City版安装代码已完成 -->
+  
+  
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/5350907716" title="Weibo" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/tzhou2018" title="Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/solarzhou28@gmail.com" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="https://mailto:t-zhou@foxmail.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Netease Cloud Music -->
+          <li class="navigation__item_social">
+            <a href="http://music.163.com/#/user/home?id=120984001" title="Netease Cloud Music">
+              <i class='social fa fa-music fa-2x'></i>
+              <span class="label">Netease Cloud Music</span>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          </ul>
+        </nav>
+      </div>
+
+      <div class = "footer_div" align="center">  
+        <p class="copyright text-muted">
+          Copyright &copy; Solarzhou's Blog 2020
+          本站点采用<a href="https://www.mit-license.org/">MIT 许可协议</a>部署. | 由 <a href="https://www.jekyll.com.cn/">Jekyll框架</a>驱动下<a href="https://github.com/onevcat/vno-jekyll">Vno-Jekyll主题</a>搭建.
+        </p>
+
+      	<div align="center">
+            
+            <!-- 访问统计 -->
+            <script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            
+            本站总访问量<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次.
+
+            <iframe
+                  style="margin-left: 2px; margin-bottom:-5px;"
+                  frameborder="0" scrolling="0" width="91px" height="20px"
+                  src="https://ghbtns.com/github-btn.html?user=tzhou2018&repo=tzhou2018.github.io&type=star&count=true" >
+            </iframe>
+      </div>
+      </div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>

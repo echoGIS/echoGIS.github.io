@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>使用Python实现与图灵机器人交互</title>
+  <meta name="description" content="应用场景七夕快到了，看着那些情侣在一起腻腻歪歪，整天短消息停不下来，众多苦逼的程序猿或许只能对着电脑了。是不是羡慕嫉妒恨呢！手机另一端怎么没人和自己在一起聊天呢？是不是也想有个人可以秒回自己的消息。没事，拿起python，我们来和图灵机器人互动。">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="使用Python实现与图灵机器人交互">
+  <meta name="twitter:description" content="应用场景七夕快到了，看着那些情侣在一起腻腻歪歪，整天短消息停不下来，众多苦逼的程序猿或许只能对着电脑了。是不是羡慕嫉妒恨呢！手机另一端怎么没人和自己在一起聊天呢？是不是也想有个人可以秒回自己的消息。没事，拿起python，我们来和图灵机器人互动。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="使用Python实现与图灵机器人交互">
+  <meta property="og:description" content="应用场景七夕快到了，看着那些情侣在一起腻腻歪歪，整天短消息停不下来，众多苦逼的程序猿或许只能对着电脑了。是不是羡慕嫉妒恨呢！手机另一端怎么没人和自己在一起聊天呢？是不是也想有个人可以秒回自己的消息。没事，拿起python，我们来和图灵机器人互动。">
+  
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2018/08/article2/">
+  <link rel="alternate" type="application/rss+xml" title="Solarzhou's Blog" href="http://localhost:4000/feed.xml">
+  
+
+<!-- 不蒜子-站点统计 -->
+  <script 
+  async src="http//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- Baidu tongji analytics 百度统计-->
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics google 统计-->
+
+
+<!-- google Adsense -->
+
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/project" title="project" class="btn-mobile-menu__icon">
+                      项目
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header id="BackgroundArea" class="panel-cover panel-cover--collapsed" >
+  
+  <script type="text/javascript" src="../js/changebg.js"> </script><!--imp！实现随机替换背景图片-->
+
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/about" title="Solarzhou's Blog" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                Solarzhou
+                            
+                        </h2>
+                        <p>
+                           
+                                2018 · 期待
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Solarzhou's Blog" class="blog-button">Solarzhou's Blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">胡萬三</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">续建码头，精彩继续...</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/project" title="project">项目</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">使用Python实现与图灵机器人交互</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2018-08-16 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-08-16</time> | 阅读：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>次
+    </p>
+    </div>
+  </header>
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <section class="post">
+    <h2 id="应用场景">应用场景</h2>
+<p>七夕快到了，看着那些情侣在一起腻腻歪歪，整天短消息停不下来，众多苦逼的程序猿或许只能对着电脑了。是不是羡慕嫉妒恨呢！手机另一端怎么没人和自己在一起聊天呢？是不是也想有个人可以秒回自己的消息。没事，拿起python，我们来和图灵机器人互动。</p>
+
+<p>以上纯xc，来看下使用python和机器人交互。</p>
+
+<p>要做一个能够与人交流的机器人有很多种方法，其中最简单的莫过于使用他人提供的接口。下面以图灵机器人为例，演示这一功能。
+简单来说，就是我们以一定的规则给图灵的服务器发送数据包，图灵服务器另一端会给予我们相应的应答。为此，你需要一个Tuling Key来告诉服务器有权和它进行对话。</p>
+
+<p>进入图灵机器人官网注册后，会在个人中心自动生成一个apikey。
+<img src="https://upload-images.jianshu.io/upload_images/12559062-45fca707af824b89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2018-08-16_171249.png" /></p>
+
+<ul>
+  <li>实现环境：Windows系统；python 3.x；</li>
+</ul>
+
+<p>在开始编写程序之前，需要安装 itchat 包。itchat是一个开源的微信个人号接口，使用python调用微信从未如此简单。</p>
+
+<p>下面直接从写入详细注释的代码开始，这样更显得直观。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># coding = utf8
+import requests
+import itchat
+# 去图灵机器人官网注册后会生成一个apikey，可在个人中心查看
+KEY = '8edce3ce905a4c1dbb965e6b35c3838f'
+def get_response(msg):
+    apiUrl = 'http://www.tuling123.com/openapi/api'
+    data = {
+        'key'   : KEY,
+        'info'   : msg,   # 这是要发送出去的信息
+        'userid'  : 'wechat-rebot',  #这里随意写点什么都行
+    }
+    try:
+        # 发送一个post请求
+        r = requests.post(apiUrl, data =data).json()
+        # 获取文本信息，若没有‘Text’ 值，将返回Nonoe 
+        return r.get('text')
+    except:
+        return
+# 通过定义装饰器加强函数 tuling_reply(msg) 功能，获取注册文本信息
+@itchat.msg_register(itchat.content.TEXT)
+def tuling_reply(msg):
+    # 设置一个默认回复，在出现问题仍能正常回复信息
+    defaultReply = 'I received: ' +msg['Text']
+    reply = get_response(msg['Text'])
+    # a or b 表示，如有a有内容，那么返回a，否则返回b
+    return reply or defaultReply
+# 使用热启动，不需要多次扫码
+itchat.auto_login(hotReload=True)
+itchat.run()
+</code></pre></div></div>
+
+<p>配置好环境后，在编译器中运行上述程序，扫码登录后就可以正常测试了。之后使用别的手机给自己发消息，便可获得回复。</p>
+
+<p>注：微信可以发送各类消息，包括文本、图片、语音等。不过本次测试我们只获取文本消息文本消息。
+效果图如下：
+<img src="https://upload-images.jianshu.io/upload_images/12559062-54497342438b1a25.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信图片_20180816175804_看图王.jpg" /></p>
+
+<p>从一名不羁的码农开始，欢迎关注我的公众号
+<img src="https://upload-images.jianshu.io/upload_images/12559062-c422f49f496bdc02.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qrcode_for_gh_730b1594d3c6_258 (1).jpg" /></p>
+
+
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+                <div class="shang_info-play">
+                  <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2018/08/article1/" data-toggle="tooltip" data-placement="top" title="使用python制作词云">上一篇：  <span>使用python制作词云</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzE0My85NzAx">
+      <script type="text/javascript">
+          (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+            if (typeof LivereTower === 'function') { return; }
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+            e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+    <!-- City版安装代码已完成 -->
+  
+  
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/5350907716" title="Weibo" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/tzhou2018" title="Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/solarzhou28@gmail.com" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="https://mailto:t-zhou@foxmail.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Netease Cloud Music -->
+          <li class="navigation__item_social">
+            <a href="http://music.163.com/#/user/home?id=120984001" title="Netease Cloud Music">
+              <i class='social fa fa-music fa-2x'></i>
+              <span class="label">Netease Cloud Music</span>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          </ul>
+        </nav>
+      </div>
+
+      <div class = "footer_div" align="center">  
+        <p class="copyright text-muted">
+          Copyright &copy; Solarzhou's Blog 2020
+          本站点采用<a href="https://www.mit-license.org/">MIT 许可协议</a>部署. | 由 <a href="https://www.jekyll.com.cn/">Jekyll框架</a>驱动下<a href="https://github.com/onevcat/vno-jekyll">Vno-Jekyll主题</a>搭建.
+        </p>
+
+      	<div align="center">
+            
+            <!-- 访问统计 -->
+            <script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            
+            本站总访问量<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>次.
+
+            <iframe
+                  style="margin-left: 2px; margin-bottom:-5px;"
+                  frameborder="0" scrolling="0" width="91px" height="20px"
+                  src="https://ghbtns.com/github-btn.html?user=tzhou2018&repo=tzhou2018.github.io&type=star&count=true" >
+            </iframe>
+      </div>
+      </div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>
