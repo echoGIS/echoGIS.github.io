@@ -10,5 +10,8 @@ title: 关于我
 <h3>🐕<strong>友情</strong></h3>
 我朋友觉得我太帅又有才华，神一般的人物，叫我大哥
 
+<h3>🐕<strong>爱情</strong></h3>
+秃老居居，来互殴呀
+
 {% include comments.html %}
 
